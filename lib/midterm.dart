@@ -149,6 +149,25 @@ class Pigpage extends StatelessWidget {
                         String? inputB = _controllerB.text;
                         double? le1 = double.tryParse(inputA);
                         double? gi1 = double.tryParse(inputB);
+                        if(le1 == null ){
+                          showDialog(
+                              context: context,
+                              barrierDismissible: false,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text('ERROR'),
+                                  content: Text('Invalid input'),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: Text('OK')
+                                    )
+                                  ],
+                                );
+                              });
+                        }
                         var a = le1!/100;
                         var b = gi1!/100;
                         var w = b*b*a*69.3;
