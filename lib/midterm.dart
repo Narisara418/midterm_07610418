@@ -149,7 +149,7 @@ class Pigpage extends StatelessWidget {
                         String? inputB = _controllerB.text;
                         double? le1 = double.tryParse(inputA);
                         double? gi1 = double.tryParse(inputB);
-                        if(le1 == null ){
+                        if(le1 == null && gi1 == null){
                           showDialog(
                               context: context,
                               barrierDismissible: false,
